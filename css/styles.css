@@ -51,6 +51,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .logo {
@@ -59,12 +61,39 @@ header {
     font-size: 1.5em;
     font-weight: 700;
     letter-spacing: -0.5px;
+    flex: 0 1 auto;
+    margin-right: 12px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    flex: 0 1 auto;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-links li {
+    white-space: nowrap;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.nav-toggle svg {
+    display: block;
+    width: 22px;
+    height: 22px;
 }
 
 .nav-links a {
@@ -141,6 +170,44 @@ header {
     color: #546e7a;
     line-height: 1.8;
     font-size: 0.95em;
+}
+
+/* Project media (image preview) */
+.project-media {
+    position: relative;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.project-media:hover img {
+    transform: scale(1.03);
+}
+
+.project-badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: rgba(26,58,82,0.85);
+    color: white;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 0.85em;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(15,40,71,0.25);
 }
 
 /* Hobbies Section */
@@ -317,6 +384,15 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+.dark-mode .project-media {
+    background: #15202a;
+}
+
+.dark-mode .project-badge {
+    background: rgba(100, 181, 246, 0.12);
+    color: #64b5f6;
+}
+
 .dark-mode .project-card h3 {
     color: #64b5f6;
 }
@@ -345,7 +421,7 @@ footer {
 
 .dark-mode footer {
     background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%) !important;
-    color: #64b5f6;
+    color: white;
 }
 
 .dark-mode .contact-form input,
@@ -387,6 +463,28 @@ footer {
         gap: 20px;
         flex-direction: column;
         text-align: center;
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 20px;
+        background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%);
+        padding: 12px 16px;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(10, 20, 40, 0.4);
+        z-index: 250;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        flex: 0 0 auto;
+    }
+
+    .nav-links a {
+        color: white;
     }
 
     .project-grid {
