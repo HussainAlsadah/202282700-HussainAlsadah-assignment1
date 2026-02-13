@@ -16,10 +16,10 @@ Features
 
 Run locally
 -----------
-1. Clone the repository:
+1. Clone the repository: https://github.com/HussainAlsadah/202282700-HussainAlsadah-assignment1.git
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/HussainAlsadah/202282700-HussainAlsadah-assignment1.git
 cd 202282700-HussainAlsadah-assignment1
 ```
 
@@ -31,16 +31,13 @@ Files & Structure
 - `css/styles.css` — all styles (responsive rules, dark mode)
 - `js/script.js` — smooth scrolling, theme toggle, mobile nav
 - `assets/images/` — project placeholder images and other assets
-- `docs/ai-usage-report.md` — AI usage report (draft)
-- `docs/technical-documentation.md` — technical documentation (draft)
+- `docs/ai-usage-report.md` — AI usage report
+- `docs/technical-documentation.md` — technical documentation 
 
 AI Usage (summary)
 -------------------
-AI tools (ChatGPT and GitHub Copilot) assisted in generating UI ideas, responsive navigation patterns, and drafting documentation. All AI suggestions were reviewed and adapted manually — see `docs/ai-usage-report.md` for details.
+I have used AI as a tools (ChatGPT and Claude) to generate code and gives recommendations and ideas that needs close attention to details, outputs needed manual review, testing, modifications. Significant changes were needed to fit my vision. for the texts I made sure that all of them reflect what I want to say and made as much changes as needed to reflect that on an honest scale.
+See `docs/ai-usage-report.md` for details.
 
-Notes
------
-- Contact form is client-side only (no backend).
-- Test responsiveness with browser DevTools; the mobile nav appears at <=768px.
 
-If you want, I can update the README with a live deployment link (GitHub Pages) or add persistent theme preferences (localStorage).
+
