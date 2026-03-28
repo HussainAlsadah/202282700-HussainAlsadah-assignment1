@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<script src="js/script.js"></script>
 
     <!-- Navigation -->
     <header>
@@ -27,15 +26,76 @@
         </nav>
     </header>
 
-    <!-- About Section -->
+    <!-- About Section (Tabbed) -->
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <p>
-                I am a Software Engineering student studing at KFUPM university, passionate about developing software 
-                in addition to applying Artifical Intelligence in neiche domains.
-                I enjoy building applications and learning new technologies.
-            </p>
+
+            <!-- Tab Buttons -->
+            <div class="tab-bar" role="tablist">
+                <button class="tab-btn active" role="tab" aria-selected="true" data-tab="about-tab">About</button>
+                <button class="tab-btn" role="tab" aria-selected="false" data-tab="skills-tab">Skills</button>
+                <button class="tab-btn" role="tab" aria-selected="false" data-tab="experience-tab">Experience</button>
+            </div>
+
+            <!-- Tab Panels -->
+            <div class="tab-panels">
+
+                <div id="about-tab" class="tab-panel active" role="tabpanel">
+                    <p>
+                        I am a Software Engineering student studying at KFUPM university, passionate about developing software
+                        in addition to applying Artificial Intelligence in niche domains.
+                        I enjoy building applications and learning new technologies.
+                    </p>
+                </div>
+
+                <div id="skills-tab" class="tab-panel" role="tabpanel">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML & CSS</span>
+                            <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Machine Learning (Intro)</span>
+                            <div class="skill-bar"><div class="skill-fill" data-level="40"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="experience-tab" class="tab-panel" role="tabpanel">
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-role">Software Engineering Student</span>
+                                <span class="exp-date">2022 – Present</span>
+                            </div>
+                            <span class="exp-place">King Fahd University of Petroleum & Minerals (KFUPM)</span>
+                            <p>Studying core CS concepts including algorithms, data structures, software design, and web development.</p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-role">Personal Projects</span>
+                                <span class="exp-date">2023 – Present</span>
+                            </div>
+                            <span class="exp-place">Self-directed</span>
+                            <p>Built web applications including an AI Study Assistant and a Task Manager App, experimenting with NLP concepts and JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -89,11 +149,28 @@
                 </div>
                 <div class="hobby-card">
                     <h3>Computer Hardware</h3>
-                    <p>Researching news and leaks about new hardware components, technologies, and performance 
+                    <p>Researching news and leaks about new hardware components, technologies, and performance
                         uplifts by the major manufacturers.
                     </p>
                 </div>
             </div>
+
+            <!-- Trivia Widget -->
+            <div class="trivia-widget">
+                <h3 class="trivia-title">🧠 Tech Trivia</h3>
+                <div id="trivia-content">
+                    <p id="trivia-loading">Loading trivia...</p>
+                    <div id="trivia-question-block" class="hidden">
+                        <p id="trivia-category" class="trivia-category"></p>
+                        <p id="trivia-question" class="trivia-question"></p>
+                        <div id="trivia-answers" class="trivia-answers"></div>
+                        <p id="trivia-feedback" class="trivia-feedback hidden"></p>
+                        <button id="trivia-next" class="trivia-next-btn hidden">Next Question →</button>
+                    </div>
+                    <p id="trivia-error" class="trivia-error hidden">⚠️ Couldn't load trivia. Check your connection and try again.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -102,11 +179,23 @@
         <div class="container">
             <h2>Contact Me</h2>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
+            <form class="contact-form" id="contact-form" novalidate>
+                <div class="form-field">
+                    <input type="text" id="form-name" placeholder="Your Name">
+                    <span class="field-error" id="name-error"></span>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="form-email" placeholder="Your Email">
+                    <span class="field-error" id="email-error"></span>
+                </div>
+                <div class="form-field">
+                    <textarea id="form-message" placeholder="Your Message" rows="5"></textarea>
+                    <span class="field-error" id="message-error"></span>
+                </div>
                 <button type="submit">Send Message</button>
+                <div id="form-success" class="form-success hidden">
+                    ✅ Message sent! I'll get back to you soon.
+                </div>
             </form>
         </div>
     </section>
@@ -115,4 +204,6 @@
         <p>© 2026 Hussain Alsadah | 202282700 | Software Engineering Student</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
+</html>
